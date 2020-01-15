@@ -1,3 +1,4 @@
+// root file. will render app.js here
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

@@ -1,0 +1,1 @@
+// only class in app. a vanilla js class that holds the authentication associated functions and variables

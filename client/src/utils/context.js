@@ -1,0 +1,1 @@
+// holds the context object and will be imported to every componet that uses the useContext() hook

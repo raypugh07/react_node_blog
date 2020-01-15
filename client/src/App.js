@@ -1,3 +1,4 @@
+// root component will import and display context_state_config.js component
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
