@@ -1,0 +1,1 @@
+// compoent auth0 will redirect to after the user authenticates
