@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../main/app'); // need add "/main/" after moving files and folders.
 var debug = require('debug')('react-node-blog:server');
 var http = require('http');
 
