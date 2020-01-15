@@ -1,6 +1,6 @@
 // diplays the text of home
-
-/* import React from 'react'
+ 
+import React from 'react'
 
 const Home = props => (
     <div>
@@ -8,9 +8,9 @@ const Home = props => (
     </div>
 );
 
-export default Home; */
+export default Home;
 
-import React, { useState, useEffect } from 'react'
+/* import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
 const Home = props => {
@@ -29,4 +29,4 @@ const Home = props => {
  )
 };
 
-export default Home;
+export default Home; */
