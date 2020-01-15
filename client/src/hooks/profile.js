@@ -1,4 +1,5 @@
-// user dashboard that displays user profile data
+// user dashboard that displays user profile data. comes from auth0 and you do not set up manually. getting prof data
+// from the auth obj passed down through context.
 
 import React, { useContext } from 'react';
 import Context from '../utils/context';
