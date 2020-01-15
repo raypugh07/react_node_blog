@@ -1,0 +1,1 @@
+// diplays the text of home
