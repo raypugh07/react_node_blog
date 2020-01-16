@@ -21,6 +21,9 @@ const Header = () => {
           <Link to='/hookscontainer' style={{padding: '5px'}}>
             Hooks Container
           </Link>
+          <Link to='/posts' style={{padding: '5px'}}>
+            Forum
+          </Link>
           <Link to='/privateroute' style={{padding: '5px'}}>
             Private Route
           </Link>

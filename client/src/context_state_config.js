@@ -110,7 +110,7 @@ const ContextState = () => {
 
 
 
-    return(
+  /*   return(
       <div>
       <Context.Provider
           value={{
@@ -151,6 +151,52 @@ const ContextState = () => {
       </Context.Provider>
       </div>
     )
+}
+
+
+export default ContextState; */
+
+return(
+  <div>
+  <Context.Provider
+      value={{
+        stateProp1: stateReducer1.stateprop1,
+        dispatchContextTrue: () => handleDispatchTrue(),
+        dispatchContextFalse: () => handleDispatchFalse(),
+
+        //Auth Reducer
+        //keep for global state
+        authState: stateAuthReducer.is_authenticated,
+        dbProfileState: stateAuthReducer.db_profile,
+        profileState:  stateAuthReducer.profile,
+
+        handleAddDBProfile: (profile) => handleDBProfile(profile),
+        handleRemoveDBProfile: () => handleRemoveDBProfile(),
+        handleUserAddProfile: (profile) => handleAddProfile(profile),
+        handleUserRemoveProfile: () => handleRemoveProfile(),
+        handleUserLogin: () => handleLogin(),
+        handleUserLogout: () => handleLogout(),
+
+        //Form Reducer
+        useContextChangeState: stateFormReducer.user_textChange,
+        useContextSubmitState: stateFormReducer.user_textSubmit,
+        useContextSubmit: (event) => handleFormSubmit(event),
+        useContextChange: (event) => handleFormChange(event),
+
+        //Posts State
+        postsState: statePostsReducer.posts,
+        handleAddPosts: (posts) => handleSetPosts(posts),
+        handleRemovePosts: () => handleRemovePosts(),
+
+        //Handle auth
+        //keep for global state
+        handleAuth: (props) => handleAuthentication(props),
+        authObj: auth
+      }}>
+      <Routes />
+  </Context.Provider>
+  </div>
+)
 }
 
 
