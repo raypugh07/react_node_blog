@@ -35,6 +35,7 @@ export default class Auth {
     })
   }
 
+
   getAccessToken = () => {
     if(localStorage.getItem('access_token')) {
       const accessToken = localStorage.getItem('access_token')

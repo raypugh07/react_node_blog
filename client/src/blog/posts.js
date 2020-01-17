@@ -6,7 +6,8 @@ import axios from 'axios';
 import moment from 'moment';
 import Context from '../utils/context';
 
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
+import { Button,Header,Feed } from 'semantic-ui-react'
 import TextField from '@material-ui/core/TextField';
 
 import Card from "@material-ui/core/Card";
@@ -195,16 +196,17 @@ const Posts = (props) => {
 
   return(
       <div>
+        <Header textAlign='center'>
       <div style={{opacity: stateLocal.opacity, transition: 'opacity 2s ease'}}>
       <br />
       { context.authState
         ?  <Link to="/addpost">
-              <Button variant="contained" color="primary">
-                Add Post
+              <Button color="blue">
+                Add Jab To Gibber Feed
               </Button>
             </Link>
         : <Link to="/signup">
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="blue">
                 Sign Up to Add Post
               </Button>
             </Link>
@@ -227,9 +229,14 @@ const Posts = (props) => {
             )
             : null
           }
+
+
         </div>
 
-      <h1>Posts</h1>
+        </Header>
+
+      <Feed>
+        <h1 style={{padding:'5px'}}>Gibber Jabber</h1>
         <div>
           {stateLocal.posts_slice
             ? stateLocal.posts_slice.map(post =>
@@ -256,6 +263,8 @@ const Posts = (props) => {
                  <button onClick={() => page_change(stateLocal.max_page)}> Last </button>
                </div>
          </div>
+
+         </Feed>
       </div>
   )}
 

@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Context from '../utils/context';
 import { Button,Segment } from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css';
 
 
 const Header = () => {
@@ -12,11 +11,11 @@ const Header = () => {
 
     return(
         <div>
-          <Segment>
-          <Link to='/' style={{padding: '5px'}}>
+          <Segment textAlign='center'>
+          <Link to='/' style={{padding: '10px'}}>
             Home
           </Link>
-          <Link to='/profile' style={{padding: '5px'}}>
+          <Link to='/profile' style={{padding: '10px'}}>
             Jabber
           </Link>
           {/* <Link to='/hooksform' style={{padding: '5px'}}>
@@ -25,7 +24,7 @@ const Header = () => {
           <Link to='/hookscontainer' style={{padding: '5px'}}>
             Hooks Container
           </Link> */}
-          <Link to='/posts' style={{padding: '5px'}}>
+          <Link to='/posts' style={{padding: '10px'}}>
             Gibber Feed
           </Link>
          

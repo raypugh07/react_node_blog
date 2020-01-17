@@ -1,4 +1,4 @@
-// component auth0 will redirect to after the user authenticates. from here user is redirected to the authcheck page
+// component auth0 will redirect here after the user authenticates. from here user is redirected to the authcheck page
 // then home page
 
 import React from 'react'
