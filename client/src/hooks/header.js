@@ -3,34 +3,40 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Context from '../utils/context';
+import { Button,Segment } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
+
 
 const Header = () => {
   const context = useContext(Context)
 
     return(
         <div>
+          <Segment>
           <Link to='/' style={{padding: '5px'}}>
             Home
           </Link>
           <Link to='/profile' style={{padding: '5px'}}>
-            Profile
+            Jabber
           </Link>
-          <Link to='/hooksform' style={{padding: '5px'}}>
+          {/* <Link to='/hooksform' style={{padding: '5px'}}>
             Hooks Form
           </Link>
           <Link to='/hookscontainer' style={{padding: '5px'}}>
             Hooks Container
-          </Link>
+          </Link> */}
           <Link to='/posts' style={{padding: '5px'}}>
-            Forum
+            Gibber Feed
           </Link>
-          <Link to='/privateroute' style={{padding: '5px'}}>
+         
+          {/* <Link to='/privateroute' style={{padding: '5px'}}>
             Private Route
-          </Link>
+          </Link> */}
           {!context.authState
-            ? <button onClick={() => context.authObj.login()}>Login</button>
-            : <button onClick={() => context.authObj.logout()}>Logout</button>
+            ? <Button  color='blue' onClick={() => context.authObj.login()}>Login</Button>
+            : <Button  color='blue' onClick={() => context.authObj.logout()}>Logout</Button>
           }
+          </Segment>
         </div>
   )};
 

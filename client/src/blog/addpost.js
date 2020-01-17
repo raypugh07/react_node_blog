@@ -22,7 +22,7 @@ const AddPost = () => {
     axios.post('/api/post/posttodb', data)
       .then(response => console.log(response))
       .catch((err) => console.log(err))
-      .then(setTimeout(() => history.replace('/'), 700) )
+      .then(setTimeout(() => history.replace('/profile'), 700) )
   }
 
 

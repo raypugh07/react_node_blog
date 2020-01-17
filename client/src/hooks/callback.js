@@ -5,7 +5,7 @@ import React from 'react'
 
 const Callback = props => (
     <div>
-      Callback
+      Logging in...
     </div>
 );
 

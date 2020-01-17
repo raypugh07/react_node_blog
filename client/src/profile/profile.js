@@ -47,13 +47,13 @@ const Profile = () => {
           .then(res => console.log(res) ) )
       .catch(err => console.log(err))
       .then(() => handleClickClose())
-      .then(() => setTimeout(() => history.replace('/'), 700 ) )
+      .then(() => setTimeout(() => history.replace('/profile'), 700 ) )
   }
 
   const RenderProfile = (props) => {
     return(
       <div>
-        <h1>{props.profile.profile.nickname}</h1>
+        <h1>Welcome {props.profile.profile.nickname}</h1>
         <br />
         <img src={props.profile.profile.picture} alt="" />
         <br />
