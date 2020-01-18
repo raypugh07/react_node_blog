@@ -7,7 +7,7 @@ import moment from 'moment';
 import Context from '../utils/context';
 
 // import Button from '@material-ui/core/Button';
-import { Button,Header,Feed } from 'semantic-ui-react'
+import { Button,Header,Feed,Icon } from 'semantic-ui-react'
 import TextField from '@material-ui/core/TextField';
 
 import Card from "@material-ui/core/Card";
@@ -98,7 +98,7 @@ const Posts = (props) => {
   const RenderPosts = post => (
     <div >
     <Card >
-      <CardHeader
+      <CardHeader style={{textAlign:'center'}}
         title={<Link to={{pathname:'/post/' + post.post.pid, state: {post}}}>
                   {post.post.title}
                 </Link> }
@@ -115,14 +115,15 @@ const Posts = (props) => {
                  </Link>
                </div>
                <div className="FlexRow">
-                <i className="material-icons">thumb_up</i>
+                {/* <i className="material-icons">thumb_up</i> */}
+                <Icon name='thumbs up'></Icon>
                 <div className="notification-num-allposts"> {post.post.likes} </div>
               </div>
             </div>
             }
           />
       <br />
-      <CardContent>
+      <CardContent style={{textAlign:'center'}}>
         <span style={{overflow: 'hidden' }}> {post.post.body} </span>
       </CardContent>
     </Card>
@@ -202,12 +203,12 @@ const Posts = (props) => {
       { context.authState
         ?  <Link to="/addpost">
               <Button color="blue">
-                Add Jab To Gibber Feed
+                Add To Gibber Feed
               </Button>
             </Link>
         : <Link to="/signup">
               <Button variant="contained" color="blue">
-                Sign Up to Add Post
+                Sign Up to Add Gibber
               </Button>
             </Link>
           }
@@ -236,7 +237,7 @@ const Posts = (props) => {
         </Header>
 
       <Feed>
-        <h1 style={{padding:'5px'}}>Gibber Jabber</h1>
+        <h1 style={{padding:'5px'},{textAlign:'center'}}>Gibber Jabber</h1>
         <div>
           {stateLocal.posts_slice
             ? stateLocal.posts_slice.map(post =>

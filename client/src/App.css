@@ -22,11 +22,13 @@
 .FlexColumn {
   display: flex;
   flex-direction: column;
+ 
 }
 
 .FlexRow {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .CommentStyles {
@@ -61,10 +63,10 @@
 .notification-num-showpost {
   position:relative;
   padding:5px 9px;
-  background-color: red;
-  color: #941e1e;
-  bottom: 23px;
-  right: 5px;
+  background-color: rgb(0, 162, 255);
+  color: white;
+  bottom: 0px;
+  right: 2px;
   z-index: -1;
   border-radius: 50%;
 }
@@ -187,4 +189,10 @@
   .pagination-sm > li:last-child > span {
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
+  }
+
+  .gibberish_header{
+    margin-top: 10px;
+    text-align: center;
+
   }

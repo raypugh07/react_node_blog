@@ -2,10 +2,11 @@
 // then home page
 
 import React from 'react'
+import {Icon} from 'semantic-ui-react'
 
 const Callback = props => (
-    <div>
-      Logging in...
+    <div style={{textAlign:'center'}}>
+      <Icon loading name='spinner' size='large'></Icon>
     </div>
 );
 

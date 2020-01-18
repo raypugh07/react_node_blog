@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import history from '../utils/history';
 import Context from '../utils/context';
+import {Icon,Button} from 'semantic-ui-react'
 
 import TextField from '@material-ui/core/TextField';
 
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
+import '../App.css';
+
 
 
 
@@ -268,32 +271,33 @@ const ShowPost = (props) => {
 
     return(
         <div>
-          <div>
-            <h2>Post</h2>
+          <div style={{textAlign:'center'}}>
+            <h2>Gibber</h2>
             {stateLocal.comments_arr || props.location.state
               ? <div>
-                  <p>{stateLocal.post_title}</p>
+                  <h3>{stateLocal.post_title}</h3>
                   <p>{stateLocal.post_body}</p>
                   <p>{stateLocal.post_author}</p>
                 </div>
             : null
            }
 
-              <div style={{cursor: 'pointer'}} onClick={context.authState
+              <div style={{cursor: 'pointer'},{padding:'5px'}} onClick={context.authState
                                                         ? () => handleLikes()
                                                         : () => history.replace('/signup')}>
-                  <i className="material-icons">thumb_up</i>
+                  {/* <i className="material-icons">thumb_up</i> */}
+                  <Icon name='thumbs up'></Icon>
                   <small className="notification-num-showpost">
                     {stateLocal.likes}
                   </small>
                 </div>
           </div>
-          <div>
+          <div className='gibberish_header'>
 
-            <h2> Comments:</h2>
+            <h2  style={{textAlign:'center'}}> Gibberish:</h2>
             {stateLocal.comments_arr
               ? stateLocal.comments_arr.map((comment) =>
-                 <RenderComments comment={comment}
+                 <RenderComments  comment={comment}
                                  cur_user_id={context.dbProfileState
                                                 ? context.dbProfileState[0].uid
                                                 : null  }
@@ -306,21 +310,21 @@ const ShowPost = (props) => {
             }
           </div>
           <div>
-            <form onSubmit={handleSubmit}>
-              <TextField
+              <form style={{textAlign:'center'}} onSubmit={handleSubmit}>
+              <TextField 
                 id="comment"
-                label="Comment"
+                label="rubbish..."
                 margin="normal"
               />
               <br />
              
               {context.authState
-                ? <Button variant="contained" color="primary" type="submit">
+                ? <Button variant="contained" color="blue" type="submit">
                     Submit
                   </Button>
                 : <Link to="/signup">
-                     <Button  variant="contained" color="primary">
-                         Signup to Comment
+                     <Button  variant="contained" color="blue">
+                         Signup to Gibber
                       </Button>
                    </Link>
                }
