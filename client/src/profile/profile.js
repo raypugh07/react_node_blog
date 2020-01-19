@@ -52,14 +52,14 @@ const Profile = () => {
 
   const RenderProfile = (props) => {
     return(
-      <div>
+      <div style={{textAlign:'center'}}>
         <h1>Welcome {props.profile.profile.nickname}</h1>
         <br />
         <img src={props.profile.profile.picture} alt="" />
         <br />
-        <h4> {props.profile.profile.email}</h4>
+        <h4>Email: {props.profile.profile.email}</h4>
         <br />
-        <h5> {props.profile.profile.name} </h5>
+        <h5>Name: {props.profile.profile.name} </h5>
         <br />
         <h6> Email Verified: </h6>
         {props.profile.profile.email_verified ? <p>Yes</p> : <p>No</p> }
@@ -70,7 +70,7 @@ const Profile = () => {
    }
 
   const RenderPosts = post => (
-    <Card style={{width: '500px', height: '200px', marginBottom: '10px', paddingBottom: '80px' }}>
+    <Card style={{width: '100%', height: '200px', marginBottom: '10px', paddingBottom: '80px' }}>
       <CardHeader
         title={<Link to={{pathname:'/post/' + post.post.pid, state: {post}}}>
                   {post.post.title}
