@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://warm-island-33082.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },

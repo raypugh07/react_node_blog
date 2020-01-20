@@ -17,7 +17,8 @@
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "pg": "^7.17.1",
-    "pg-promise": "^10.3.5"
+    "pg-promise": "^10.3.5",
+    "psql": "0.0.1"
   },
   "heroku-postbuild": "npm install && cd client && npm install --only-dev && npm install && npm run build",
   "engines": {

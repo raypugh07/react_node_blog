@@ -1,29 +1,29 @@
 // connects database to server
 
-const { Pool } = require('pg')
-
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'database1',   // remember to change name of db accordingly
-  password: 'Jacki3mich',
-  port: 5432
-})
-
-module.exports = pool
-
 // const { Pool } = require('pg')
 
 // const pool = new Pool({
-//   user: 'okbjhrluewrbuz',
-//   host: 'ec2-107-21-214-101.compute-1.amazonaws.com',
-//   database: 'db7m1m1nr053r0',   // remember to change name of db accordingly
-//   password: '84b2fadfdd2415538f55032d52ca6b8c382053360307afc11bfdf2d902c15169',
-//   port: 5432,
-//   connection:'postgresql://okbjhrluewrbuz:84b2fadfdd2415538f55032d52ca6b8c382053360307afc11bfdf2d902c15169@ec2-107-21-214-101.compute-1.amazonaws.com:5432/db7m1m1nr053r0'
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'database1',   // remember to change name of db accordingly
+//   password: 'Jacki3mich',
+//   port: 5432
 // })
 
 // module.exports = pool
+
+const { Pool } = require('pg')
+
+const pool = new Pool({
+  user: 'wkvxzjrpvafazl',
+  host: 'ec2-54-174-229-152.compute-1.amazonaws.com',
+  database: 'd7vn6cbq9dl4qh',   // remember to change name of db accordingly
+  password: '0f83b5c33291f8ac815e55cea45eed4cb1e4412f395ba8837d7758b5c42ba0ff',
+  port: 5432,
+  connection:'postgres://wkvxzjrpvafazl:0f83b5c33291f8ac815e55cea45eed4cb1e4412f395ba8837d7758b5c42ba0ff@ec2-54-174-229-152.compute-1.amazonaws.com:5432/d7vn6cbq9dl4qh'
+})
+
+module.exports = pool
 
 
 // require('dotenv').config()
