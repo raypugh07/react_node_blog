@@ -14,16 +14,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //dev
-// app.use(express.static(path.join(__dirname, 'public')));   
+app.use(express.static(path.join(__dirname, 'public')));   
 // app.use(cors());
 
-// Serve static files from the React frontend app //prod
+/* // Serve static files from the React frontend app //prod
 app.use(express.static(path.join(__dirname, 'client/build')))  
 // Anything that doesn't match the above, send back index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
-
+ */
 
 app.use('/', indexRouter)
 
