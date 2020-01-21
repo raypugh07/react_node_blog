@@ -57,7 +57,7 @@ const ShowUser = (props) => {
     <div>
      <Card className="CardStyles">
         <CardHeader
-          title={<Link to={{pathname:"/post/" + post.post.post_id,
+          title={<Link to={{pathname:"/post/" + post.post.pid,
       						state: {post} }}>
                 { post.post.title }
                 </Link>}
@@ -93,7 +93,7 @@ const ShowUser = (props) => {
        <div className="FlexColumn">
        { userPosts ?
           userPosts.map(post =>
-          <div key={ post.post_id }>
+          <div key={ post.pid }>
              <RenderPosts  post={post} />
              <br />
           </div>
