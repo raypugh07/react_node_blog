@@ -12,12 +12,12 @@ const AddPost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const user_id = context.dbProfileState[0].user_id
+    const user_id = context.dbProfileState[0].uid
     const username = context.dbProfileState[0].username
     const data = {title: event.target.title.value,
                   body: event.target.body.value,
                   username: username,
-                  user_id: user_id}
+                  uid: user_id}
 
     axios.post('/api/post/posttodb', data)
       .then(response => console.log(response))

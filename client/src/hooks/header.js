@@ -18,6 +18,9 @@ const Header = () => {
           <Link to='/profile' style={{padding: '10px'}}>
             Jabber
           </Link>
+          <Link to='/addpost' style={{padding: '10px'}}>
+            Add Gib
+          </Link>
           {/* <Link to='/hooksform' style={{padding: '5px'}}>
             Hooks Form
           </Link>
