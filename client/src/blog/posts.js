@@ -99,7 +99,7 @@ const Posts = (props) => {
     <div >
     <Card >
       <CardHeader style={{textAlign:'center'}}
-        title={<Link to={{pathname:'/post/' + post.post.postid, state: {post}}}>
+        title={<Link to={{pathname:'/post/' + post.post.post_id, state: {post}}}>
                   {post.post.title}
                 </Link> }
         subheader={
@@ -226,7 +226,7 @@ const Posts = (props) => {
        <div>
          {stateLocal.posts_search
            ? stateLocal.posts_search.map(post =>
-             <RenderPosts key={post.postid + 1000} post={post} />
+             <RenderPosts key={post.post_id + 1000} post={post} />
             )
             : null
           }
@@ -241,7 +241,7 @@ const Posts = (props) => {
         <div>
           {stateLocal.posts_slice
             ? stateLocal.posts_slice.map(post =>
-              <RenderPosts key={post.postid} post={post} />
+              <RenderPosts key={post.post_id} post={post} />
              )
             : null
            }

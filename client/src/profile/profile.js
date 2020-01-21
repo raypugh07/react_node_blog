@@ -32,8 +32,8 @@ const Profile = () => {
       .catch((err) => console.log(err))
   })
 
-  const handleClickOpen = (pid) => {
-    setState({open: true, post_id: pid })
+  const handleClickOpen = (post_id) => {
+    setState({open: true, post_id: post_id })
   }
 
   const handleClickClose = () => {
@@ -72,7 +72,7 @@ const Profile = () => {
   const RenderPosts = post => (
     <Card style={{width: '100%', height: '200px', marginBottom: '10px', paddingBottom: '80px' }}>
       <CardHeader
-        title={<Link to={{pathname:'/post/' + post.post.pid, state: {post}}}>
+        title={<Link to={{pathname:'/post/' + post.post.post_id, state: {post}}}>
                   {post.post.title}
                 </Link> }
         subheader={
@@ -81,12 +81,12 @@ const Profile = () => {
                 {post.post.date_created}
               </div>
               <div className="FlexRow">
-                <Link to={{pathname:'/editpost/' + post.post.pid, state:{post} }}>
+                <Link to={{pathname:'/editpost/' + post.post.post_id, state:{post} }}>
                   <button>
                    Edit
                   </button>
                 </Link>
-                <button onClick={() => handleClickOpen(post.post.pid) }>
+                <button onClick={() => handleClickOpen(post.post.post_id) }>
                  Delete
                 </button>
               </div>
@@ -110,7 +110,7 @@ const Profile = () => {
             <div>
               {stateLocal.posts
                 ? stateLocal.posts.map(post =>
-                  <RenderPosts post={post} key={post.pid} /> )
+                  <RenderPosts post={post} key={post.post_id} /> )
                 : null }
             </div>
             <Dialog
