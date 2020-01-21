@@ -240,7 +240,7 @@ const Posts = (props) => {
         <h1 className='gibber_jabber' style={{padding:'5px'},{textAlign:'center'}}>Gibber Jabber</h1>
         <div>
           {stateLocal.posts_slice
-            ?stateLocal.posts_slice.map(post =>
+            ? stateLocal.posts_slice.map(post =>
               <RenderPosts key={post.pid} post={post} />
              )
             : null
