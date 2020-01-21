@@ -30,13 +30,13 @@ const EditPost = (props) => {
 
     const user_id = context.dbProfileState[0].uid
     const username = context.dbProfileState[0].username
-    const pid = props.location.state.post.post.pid
+    const postid = props.location.state.post.post.postid
     const title = event.target.title.value
     const body = event.target.body.value
 
     const data = {title: title,
                   body: body,
-                  pid: pid,
+                  postid: postid,
                   uid: user_id,
                   username: username
                  }

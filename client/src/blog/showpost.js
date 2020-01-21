@@ -48,7 +48,7 @@ const ShowPost = (props) => {
                   post_title: props.location.state.post.post.title,
                   post_body: props.location.state.post.post.body,
                   post_author: props.location.state.post.post.author,
-                  post_id: props.location.state.post.post.pid})
+                  post_id: props.location.state.post.post.postid})
         }
       }, [stateLocal,
           props.location])
@@ -68,7 +68,7 @@ const ShowPost = (props) => {
                         post_title: res.data[0].title,
                         post_body: res.data[0].body,
                         post_author: res.data[0].author,
-                        post_id: res.data[0].pid
+                        post_id: res.data[0].postid
                       })
                  : null
               )
