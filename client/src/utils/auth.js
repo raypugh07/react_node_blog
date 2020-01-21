@@ -7,8 +7,8 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "dev-b7l7o2zo.auth0.com",
     clientID: 'ZSVujnyP6b1vNBhIvy3Laph4LTwScj9r',
-    redirectUri: 'https://warm-island-33082.herokuapp.com/callback',  //prod
-    // redirectUri: 'http://localhost:3000/callback',     //dev
+    // redirectUri: 'https://warm-island-33082.herokuapp.com/callback',  //prod
+    redirectUri: 'http://localhost:3000/callback',     //dev
     responseType: 'token id_token',
     scope: 'openid profile email'
   })

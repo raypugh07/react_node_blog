@@ -40,7 +40,7 @@ const EditPost = (props) => {
                   uid: user_id,
                   username: username
                  }
-    axios.put("/api/put/post", data)
+    axios.put("https://warm-island-33082.herokuapp.com/api/put/post", data)
       .then(res => console.log(res))
       .catch(err => console.log(err))
       .then(setTimeout(() => history.replace('/profile'), 700 ))

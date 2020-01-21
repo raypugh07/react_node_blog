@@ -12,8 +12,8 @@ const AuthCheck = () => {
       const profile = context.authObj.userProfile
       context.handleUserLogin()
       context.handleUserAddProfile(profile)
-       axios.post('/api/posts/userprofiletodb', profile )
-        .then(axios.get('/api/get/userprofilefromdb',
+       axios.post('https://warm-island-33082.herokuapp.com/api/posts/userprofiletodb', profile )
+        .then(axios.get('https://warm-island-33082.herokuapp.com/api/get/userprofilefromdb',
         		{params: {email: profile.profile.email}})
           .then(res => context.handleAddDBProfile(res.data)) )
         .then(history.replace('/') )

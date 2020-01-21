@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var cors = require('cors');
+var cors = require('cors');
 
 var indexRouter = require('./routes')
 
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //dev
 app.use(express.static(path.join(__dirname, 'public')));   
-// app.use(cors());
+app.use(cors());
 
 /* // Serve static files from the React frontend app //prod
 app.use(express.static(path.join(__dirname, 'client/build')))  

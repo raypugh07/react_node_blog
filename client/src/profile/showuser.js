@@ -18,13 +18,13 @@ const ShowUser = (props) => {
 
   useEffect(() => {
     const username = props.location.state.post.post.author
-    axios.get('/api/get/otheruserprofilefromdb',
+    axios.get('https://warm-island-33082.herokuapp.com/api/get/otheruserprofilefromdb',
               {params: {username: username}} )
       .then(res =>  setProfile({...res.data} ))
       .catch(function (error) {
           console.log(error);
         })
-     axios.get('/api/get/otheruserposts',
+     axios.get('https://warm-island-33082.herokuapp.com/api/get/otheruserposts',
                {params: {username: username}} )
        .then(res =>  setPosts([...res.data]))
        .catch(function (error) {

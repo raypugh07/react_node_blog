@@ -41,7 +41,7 @@ const Posts = (props) => {
 
     useEffect(() => {
      if(!context.postsState) {
-        axios.get('/api/get/allposts')
+        axios.get('https://warm-island-33082.herokuapp.com/api/get/allposts')
           .then(res => context.handleAddPosts(res.data) )
           .catch((err) => console.log(err))
         }
@@ -84,7 +84,7 @@ const Posts = (props) => {
   const handleSearch = (event) => {
      setState({...stateLocal, posts_search: []});
      const search_query = event.target.value
-     axios.get('/api/get/searchpost', {params: {search_query: search_query} })
+     axios.get('https://warm-island-33082.herokuapp.com/api/get/searchpost', {params: {search_query: search_query} })
        .then(res => res.data.length !== 0
                       ? add_search_posts_to_state(res.data)
                       : null )

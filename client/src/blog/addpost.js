@@ -19,7 +19,7 @@ const AddPost = () => {
                   username: username,
                   uid: user_id}
 
-    axios.post('/api/post/posttodb', data)
+    axios.post('https://warm-island-33082.herokuapp.com/api/post/posttodb', data)
       .then(response => console.log(response))
       .catch((err) => console.log(err))
       .then(setTimeout(() => history.replace('/profile'), 700) )

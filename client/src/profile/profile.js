@@ -27,7 +27,7 @@ const Profile = () => {
 
   useEffect(() => {
     const user_id = context.dbProfileState[0].user_id
-    axios.get('/api/get/userposts', {params: { user_id: user_id}})
+    axios.get('https://warm-island-33082.herokuapp.com/api/get/userposts', {params: { user_id: user_id}})
       .then((res) => setState({...stateLocal, posts: [...res.data] }))
       .catch((err) => console.log(err))
   })
@@ -42,8 +42,8 @@ const Profile = () => {
 
   const DeletePost = () => {
     const post_id = stateLocal.post_id
-    axios.delete('api/delete/postcomments', {data: { post_id: post_id }} )
-      .then(() => axios.delete('/api/delete/post', {data: { post_id: post_id }} )
+    axios.delete('https://warm-island-33082.herokuapp.com/api/delete/postcomments', {data: { post_id: post_id }} )
+      .then(() => axios.delete('https://warm-island-33082.herokuapp.com/api/delete/post', {data: { post_id: post_id }} )
           .then(res => console.log(res) ) )
       .catch(err => console.log(err))
       .then(() => handleClickClose())
