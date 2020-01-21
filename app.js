@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // var cors = require('cors');
 
-var indexRouter = require('./routes')
+var indexRouter = require('./main/routes')
 
 var app = express();
 
@@ -17,10 +17,10 @@ app.use(cookieParser());
 // app.use(cors());
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'client/public')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 // Anything that doesn't match the above, send back index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/public/index.html'))
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
 
 
