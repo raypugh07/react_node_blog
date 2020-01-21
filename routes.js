@@ -28,7 +28,7 @@ router.get('/api/get/allposts', (req, res, next ) => {
   router.post('/api/post/posttodb', (req, res, next) => {
 	const values = [ req.body.title, 
 					 req.body.body,
-					 req.body.uid, 
+					 req.body.user_id, 
 					 req.body.username]
 	pool.query(`INSERT INTO posts(title, body, user_id, author, date_created)
 				VALUES($1, $2, $3, $4, NOW() )`,
@@ -41,7 +41,7 @@ router.get('/api/get/allposts', (req, res, next ) => {
   router.put('/api/put/post', (req, res, next) => {
 	const values = [ req.body.title,
 					 req.body.body, 
-					 req.body.uid, 
+					 req.body.user_id, 
 					 req.body.pid, 
 					 req.body.username]
 	pool.query(`UPDATE posts SET title= $1, body=$2, user_id=$3, author=$5, date_created=NOW()
@@ -72,10 +72,10 @@ router.get('/api/get/allposts', (req, res, next ) => {
   })
   
   router.put('/api/put/likes', (req, res, next) => {
-	const uid = [req.body.uid]
+	const user_id = [req.body.user_id]
 	const post_id = String(req.body.post_id)
   
-	const values = [ uid, post_id ]
+	const values = [ user_id, post_id ]
 	console.log(values)
 	pool.query(`UPDATE posts
 				SET like_user_id = like_user_id || $1, likes = likes + 1

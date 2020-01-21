@@ -17,7 +17,7 @@ const AddPost = () => {
     const data = {title: event.target.title.value,
                   body: event.target.body.value,
                   username: username,
-                  uid: user_id}
+                  user_id: user_id}
 
     axios.post('/api/post/posttodb', data)
       .then(response => console.log(response))
