@@ -23,6 +23,7 @@ const AuthCheck = () => {
       context.handleUserRemoveProfile()
       context.handleUserRemoveProfile()
       history.replace('/')
+      
       }
     }, [context.authObj.userProfile, context])
 

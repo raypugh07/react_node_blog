@@ -26,7 +26,7 @@ const Profile = () => {
                                           })
 
   useEffect(() => {
-    const user_id = context.dbProfileState[0].uid
+    const user_id = context.dbProfileState[0].user_id
     axios.get('/api/get/userposts', {params: { user_id: user_id}})
       .then((res) => setState({...stateLocal, posts: [...res.data] }))
       .catch((err) => console.log(err))

@@ -237,7 +237,7 @@ const Posts = (props) => {
         </Header>
 
       <Feed>
-        <h1 style={{padding:'5px'},{textAlign:'center'}}>Gibber Jabber</h1>
+        <h1 className='gibber_jabber' style={{padding:'5px'},{textAlign:'center'}}>Gibber Jabber</h1>
         <div>
           {stateLocal.posts_slice
             ? stateLocal.posts_slice.map(post =>
