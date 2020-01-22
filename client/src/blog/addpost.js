@@ -28,7 +28,7 @@ const AddPost = () => {
 
     return(
       <div>
-        <form onSubmit={handleSubmit}>
+        <form style={{textAlign:'center'}} onSubmit={handleSubmit}>
           <TextField
             id='title'
             label='Title'
@@ -46,7 +46,8 @@ const AddPost = () => {
            <button type='submit'> Submit </button>
            </form>
         <br />
-        <button onClick={() => history.replace('/posts')}> Cancel </button>
+        <div style={{textAlign:'center'}}><button  onClick={() => history.replace('/posts')}> Cancel </button>
+        </div>
       </div>
   )}
 

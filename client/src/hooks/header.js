@@ -35,8 +35,8 @@ const Header = () => {
             Private Route
           </Link> */}
           {!context.authState
-            ? <Button  color='blue' onClick={() => context.authObj.login()}>Login</Button>
-            : <Button  color='blue' onClick={() => context.authObj.logout()}>Logout</Button>
+            ? <Button style={{padding:'5px'}}  color='blue' onClick={() => context.authObj.login()}>Login</Button>
+            : <Button style={{padding:'5px'}}  color='blue' onClick={() => context.authObj.logout()}>Logout</Button>
           }
           </Segment>
         </div>

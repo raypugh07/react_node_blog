@@ -15,6 +15,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 
+import '../App.css'
+
 
 
 const Profile = () => {
@@ -55,7 +57,7 @@ const Profile = () => {
       <div style={{textAlign:'center'}}>
         <h1>Welcome {props.profile.profile.nickname}</h1>
         <br />
-        <img src={props.profile.profile.picture} alt="" />
+        <img className='profile_pic' src={props.profile.profile.picture} alt="" />
         <br />
         <h4>Email: {props.profile.profile.email}</h4>
         <br />

@@ -200,3 +200,8 @@
   .gibber_jabber{
     text-decoration: underline;
   }
+
+  .profile_pic{
+    width:75%;
+    margin:10px;
+  }
