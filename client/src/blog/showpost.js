@@ -206,7 +206,7 @@ const ShowPost = (props) => {
                     user_id: user_id,
                     username: username}
 
-      axios.post('/api/post/commenttodb', data)
+      axios.post('https://warm-island-33082.herokuapp.com/api/post/commenttodb', data)
         .then(res => console.log(res))
         .catch((err) => console.log(err))
       window.scroll({top: 0, left: 0, behavior: 'smooth'})
@@ -238,7 +238,7 @@ const ShowPost = (props) => {
                     user_id: user_id,
                     username: username}
 
-      axios.put('/api/put/commenttodb', data)
+      axios.put('https://warm-island-33082.herokuapp.com/api/put/commenttodb', data)
         .then(res => console.log(res))
         .catch((err) => console.log(err))
       handleCommentUpdate(edited_comment);
@@ -247,7 +247,7 @@ const ShowPost = (props) => {
     const handleDeleteComment = (cid) => {
       const comment_id = cid
       console.log(cid)
-      axios.delete('/api/delete/comment', {data: {comment_id: comment_id}} )
+      axios.delete('https://warm-island-33082.herokuapp.com/api/delete/comment', {data: {comment_id: comment_id}} )
         .then(res => console.log(res))
         .catch((err) => console.log(err))
       handleCommentDelete(cid)
@@ -259,7 +259,7 @@ const ShowPost = (props) => {
 
         const data = { uid: user_id, post_id: post_id }
         console.log(data)
-        axios.put('/api/put/likes', data)
+        axios.put('https://warm-island-33082.herokuapp.com/api/put/likes', data)
           .then( !stateLocal.like_user_ids.includes(user_id) && stateLocal.like_post
                     ? setState({...stateLocal,
                                 likes: stateLocal.likes + 1,
