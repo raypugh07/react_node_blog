@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Button,Container } from 'semantic-ui-react'
 import Context from '../utils/context';
+import '../App.css'
 
 
 
@@ -16,12 +17,13 @@ const Home = props => {
     <div>
       <Container text style={{padding:'10px'}} textAlign='center'>
       <h1>Welcome to Gibber.</h1>
-      <p>Please {!context.authState
-        ? <Button  color='blue' onClick={() => context.authObj.login()}>Login</Button>
-        : <Button  color='blue' onClick={() => context.authObj.login()}>Login</Button>} or <Button><Link to='/signup'>Sign Up</Link></Button>
+      <p>{/* {!context.authState
+        ? <Button  color='violet' onClick={() => context.authObj.login()}>Login</Button>
+        : <Button  color='violet' onClick={() => context.authObj.login()}>Login</Button>} or  */}<Button color='violet' onClick={() => context.authObj.login()}>Sign Up</Button>
         </p>
-        <p>Once logged in click <Link to='/profile'>here</Link> to view your Jabber profile.
+        <p>Once logged in click <Link style={{color:'#5936AC'}} to='/profile'>here</Link> to view your Jabber profile. *
         </p>
+        <p style={{fontSize:'12px'}}>* If using Google to login you still have to sign up before being able to use your Google credentials.</p>
 
         </Container>
 

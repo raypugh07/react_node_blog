@@ -6,6 +6,8 @@ import axios from 'axios';
 import history from '../utils/history';
 import Context from '../utils/context';
 import {Icon,Button} from 'semantic-ui-react'
+import moment from 'moment';
+
 
 import TextField from '@material-ui/core/TextField';
 
@@ -126,9 +128,11 @@ const ShowPost = (props) => {
       <div className={stateLocal.delete_comment_id === props.comment.cid
                         ? "FadeOutComment"
                         : "CommentStyles"}>
-        <div>
+        <div style={{padding:'5px'}}>
         <p>{props.comment.comment} </p>
-        <small>
+      
+        <p style={{fontWeight:'bold'}}>{ props.comment.author} </p>
+          <small>
           { props.comment.date_created === 'Just Now'
             ?  <div> {props.comment.isEdited
                   ? <span> Edited </span>
@@ -136,7 +140,6 @@ const ShowPost = (props) => {
             :  props.comment.date_created
           }
         </small>
-        <p> By: { props.comment.author} </p>
         </div>
         <div>
         {props.cur_user_id === props.comment.user_id
@@ -275,9 +278,9 @@ const ShowPost = (props) => {
             <h2>Gibber</h2>
             {stateLocal.comments_arr || props.location.state
               ? <div>
-                  <h3>{stateLocal.post_title}</h3>
-                  <p>{stateLocal.post_body}</p>
-                  <p>{stateLocal.post_author}</p>
+                  <p style={{fontSize:'18px'}}>Title: {stateLocal.post_title}</p>
+                  <p className='show_post_body'>{stateLocal.post_body}</p>
+                  <p style={{fontWeight:'bold'}}>{stateLocal.post_author}</p>
                 </div>
             : null
            }
@@ -294,7 +297,7 @@ const ShowPost = (props) => {
           </div>
           <div className='gibberish_header'>
 
-            <h2  style={{textAlign:'center'}}> Gibberish:</h2>
+            <h2  style={{textAlign:'center'}}> Gibberish :</h2>
             {stateLocal.comments_arr
               ? stateLocal.comments_arr.map((comment) =>
                  <RenderComments  comment={comment}
@@ -319,11 +322,11 @@ const ShowPost = (props) => {
               <br />
              
               {context.authState
-                ? <Button variant="contained" color="blue" type="submit">
+                ? <Button variant="contained" color="violet" type="submit">
                     Submit
                   </Button>
                 : <Link to="/signup">
-                     <Button  variant="contained" color="blue">
+                     <Button  variant="contained" color="violet">
                          Signup to Gibber
                       </Button>
                    </Link>

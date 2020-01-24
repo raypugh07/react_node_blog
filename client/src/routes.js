@@ -41,7 +41,7 @@ const Routes = () => {
     const context = useContext(Context)
 
       return(
-        <div>
+        <div style={{background:'#fceed1'}}>
           <Router history={history} >
           <Header />
           <br />
@@ -58,7 +58,7 @@ const Routes = () => {
               <Route path='/posts' component={Posts} />
               <Route path='/post/:pid' component={ShowPost} />
               <Route path='/editpost/:pid' component={EditPost} />
-              <Route path='/addpost' component={AddPost} />
+              <PrivateRoute path='/addpost' auth={context.authState} component={AddPost} />
 
               <Route path="/user/:name" component={ ShowUser } />
 

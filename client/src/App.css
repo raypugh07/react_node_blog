@@ -1,3 +1,10 @@
+.app{
+  background:#fceed1; 
+   height: 100vh; 
+  /* border:solid red;*/
+}
+
+
 .FlexProfileDrawer {
   display: flex;
   flex-direction: row;
@@ -22,6 +29,7 @@
 .FlexColumn {
   display: flex;
   flex-direction: column;
+  
  
 }
 
@@ -54,21 +62,25 @@
   animation-timing-function: ease-out;
   animation-duration: 2s;
   height: auto;
-  width: 500px;
-  margin-bottom: 10px;
+  width: 75%;
+  /* margin-bottom: 10px; */
+  margin:auto auto 10px auto;
   padding-bottom: 10px;
+  border-radius:10px;
+  /* border:solid red; */
 }
 
 
 .notification-num-showpost {
   position:relative;
   padding:5px 9px;
-  background-color: rgb(0, 162, 255);
+  background-color: #e1b382;
   color: white;
   bottom: 0px;
   right: 2px;
-  z-index: -1;
+  /* z-index: -1; */
   border-radius: 50%;
+  /* border:solid red; */
 }
 
 .notification-num-allposts {
@@ -198,10 +210,47 @@
   }
 
   .gibber_jabber{
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
 
   .profile_pic{
     width:75%;
     margin:10px;
   }
+
+  .show_post_body{
+    width:75%;
+    margin:auto;
+    text-align: left;
+
+
+  }
+
+  .gibber_feed_posts{
+    width:75%;
+    margin:auto auto 8px auto;
+    text-align: left;
+    background-color:#e1b382;
+    border-radius: 10px;
+
+  }
+
+  .header_nav a{
+    padding: 10px;
+    font-weight: bold;
+    /* border:solid blue; */
+  }
+
+  .header_nav{
+    /* border:solid red; */
+    background:#fceed1;
+    display:flex;
+    justify-content: center;
+    padding:5px;
+  }
+
+  .header1{
+    /* border:solid red; */
+  }
+
+ 

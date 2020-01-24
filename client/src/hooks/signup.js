@@ -10,7 +10,7 @@ const SignUp = (props) => {
     <div className="FlexRowMain">
     <div style={{textAlign:'center'}}>
     <h1>Signup and Create an Account</h1>
-      <Button color="blue"
+      <Button color="violet"
               size="large"
               variant="contained"
               onClick={() => context.authObj.login()}>

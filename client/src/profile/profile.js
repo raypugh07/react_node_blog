@@ -4,6 +4,7 @@ import Context from '../utils/context';
 import { Link } from 'react-router-dom';
 import history from '../utils/history';
 import axios from 'axios';
+import moment from 'moment'
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -54,17 +55,17 @@ const Profile = () => {
 
   const RenderProfile = (props) => {
     return(
-      <div style={{textAlign:'center'}}>
+      <div style={{textAlign:'center',padding:'5px'}}>
         <h1>Welcome {props.profile.profile.nickname}</h1>
         <br />
-        <img className='profile_pic' src={props.profile.profile.picture} alt="" />
+        {/* <img className='profile_pic' src={props.profile.profile.picture} alt="" /> */}
         <br />
         <h4>Email: {props.profile.profile.email}</h4>
         <br />
         <h5>Name: {props.profile.profile.name} </h5>
         <br />
-        <h6> Email Verified: </h6>
-        {props.profile.profile.email_verified ? <p>Yes</p> : <p>No</p> }
+        {/* <h6> Email Verified: </h6> */}
+        {/* {props.profile.profile.email_verified ? <p>Yes</p> : <p>No</p> } */}
         <br />
       </div>
 
@@ -72,15 +73,15 @@ const Profile = () => {
    }
 
   const RenderPosts = post => (
-    <Card style={{width: '100%', height: '200px', marginBottom: '10px', paddingBottom: '80px' }}>
-      <CardHeader
-        title={<Link to={{pathname:'/post/' + post.post.pid, state: {post}}}>
+    <Card style={{width: '100%'/* , height: '200px' */, marginBottom: '10px', paddingBottom: '80px'}}>
+      <CardHeader 
+        title={<Link to={{pathname:'/post/' + post.post.pid, state: {post}}} style={{color:'#5936AC'}}>
                   {post.post.title}
                 </Link> }
         subheader={
             <div className="FlexColumn">
               <div className="FlexRow">
-                {post.post.date_created}
+              {  moment(post.post.date_created).format('MMMM Do, YYYY | h:mm a') }
               </div>
               <div className="FlexRow">
                 <Link to={{pathname:'/editpost/' + post.post.pid, state:{post} }}>

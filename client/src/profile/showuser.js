@@ -41,14 +41,14 @@ const ShowUser = (props) => {
             {props.profile.username}
          </h1>
          </div>
-         <div className="FlexRow">
+        {/*  <div className="FlexRow">
          <Link to={{pathname:"/sendmessage/", 
                    state:{props} }}>
              <Button variant="contained" color="primary" type="submit">
                 Send Message
              </Button>
           </Link>
-        </div>
+        </div> */}
     </div>
     );
 
@@ -58,7 +58,7 @@ const ShowUser = (props) => {
      <Card className="CardStyles">
         <CardHeader
           title={<Link to={{pathname:"/post/" + post.post.pid,
-      						state: {post} }}>
+      						state: {post} }} style={{color:'#5936AC'}}>
                 { post.post.title }
                 </Link>}
           subheader={
@@ -89,7 +89,7 @@ const ShowUser = (props) => {
     <br />
     <hr className="style-two" />
 
-     <h3> Latest Activity: </h3>
+     <h3 style={{marginLeft:'5px'}}> Latest Activity: </h3>
        <div className="FlexColumn">
        { userPosts ?
           userPosts.map(post =>

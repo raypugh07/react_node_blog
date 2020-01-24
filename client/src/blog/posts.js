@@ -70,6 +70,8 @@ const Posts = (props) => {
       setState({...stateLocal,
                 posts_slice: stateLocal.posts.slice(indexOfFirstPost,
                                                     indexOfLastPost) })
+
+                                                    // window.location.reload(true)
     }, [stateLocal.currentPage]) //eslint-disable-line
 
 
@@ -97,9 +99,9 @@ const Posts = (props) => {
 
   const RenderPosts = post => (
     <div >
-    <Card >
-      <CardHeader style={{textAlign:'center'}}
-        title={<Link to={{pathname:'/post/' + post.post.pid, state: {post}}}>
+    <Card  style={{background:'#fceed1'}}>
+      <CardHeader style={{textAlign:'center',background:'#fceed1'}}
+        title={<Link style={{color:'#5936AC'}} to={{pathname:'/post/' + post.post.pid, state: {post}}}>
                   {post.post.title}
                 </Link> }
         subheader={
@@ -109,7 +111,7 @@ const Posts = (props) => {
               </div>
               <div className="FlexRow">
                 By:
-                <Link style={{paddingLeft: '5px', textDecoration: 'none'}}
+                <Link style={{paddingLeft: '5px', textDecoration: 'none',color:'#5936AC',fontWeight:'bold'}}
                       to={{pathname:"/user/" + post.post.author, state:{post} }}>
                  { post.post.author }
                  </Link>
@@ -123,7 +125,7 @@ const Posts = (props) => {
             }
           />
       <br />
-      <CardContent style={{textAlign:'center'}}>
+      <CardContent className='gibber_feed_posts' /* style={{textAlign:'center'}} */>
         <span style={{overflow: 'hidden' }}> {post.post.body} </span>
       </CardContent>
     </Card>
@@ -196,30 +198,30 @@ const Posts = (props) => {
 
 
   return(
-      <div>
-        <Header textAlign='center'>
+      <div style={{background:'#fceed1'}} >
+        <Header style={{background:'#fceed1',textAlign:'center'}}>
       <div style={{opacity: stateLocal.opacity, transition: 'opacity 2s ease'}}>
       <br />
       { context.authState
         ?  <Link to="/addpost">
-              <Button color="blue">
+              <Button color="violet">
                 Add To Gibber Feed
               </Button>
             </Link>
         : <Link to="/signup">
-              <Button variant="contained" color="blue">
+              <Button variant="contained" color="violet">
                 Sign Up to Add Gibber
               </Button>
             </Link>
           }
       </div>
       <br />
-      <TextField
+     {/*  <TextField
         id="search"
         label="Search"
         margin="normal"
         onChange={handleSearch}
-      />
+      /> */}
       <hr />
        
        <br />
@@ -236,9 +238,9 @@ const Posts = (props) => {
 
         </Header>
 
-      <Feed>
-        <h1 className='gibber_jabber' style={{padding:'5px'},{textAlign:'center'}}>Gibber Jabber</h1>
-        <div>
+      <Feed style={{background:'#fceed1'}}>
+        <h1 className='gibber_jabber' style={{padding:'5px',textAlign:'center',background:'#fceed1',color:'#5936AC'}}>Gibber Jabber :</h1>
+        <div >
           {stateLocal.posts_slice
             ? stateLocal.posts_slice.map(post =>
               <RenderPosts key={post.pid} post={post} />
