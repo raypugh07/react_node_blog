@@ -229,9 +229,12 @@
   .gibber_feed_posts{
     width:75%;
     margin:auto auto 8px auto;
-    text-align: left;
+    text-align: justify;
     background-color:#e1b382;
-    border-radius: 10px;
+    border-radius: 2px;
+    border-style: outset;
+    border-color:#e1b382 ;
+    
 
   }
 
