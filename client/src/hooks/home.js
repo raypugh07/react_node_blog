@@ -16,7 +16,10 @@ const Home = props => {
 
     <div>
       <Container text style={{padding:'10px'}} textAlign='center'>
-      <h1>Welcome to Gibber.</h1>
+      <h1>Welcome to Gibber.<br/>
+        Social Media without Clutter...<br/>
+        or Restrictions.
+      </h1>
       <p>{/* {!context.authState
         ? <Button  color='violet' onClick={() => context.authObj.login()}>Login</Button>
         : <Button  color='violet' onClick={() => context.authObj.login()}>Login</Button>} or  */}<Button color='violet' onClick={() => context.authObj.login()}>Sign Up</Button>
