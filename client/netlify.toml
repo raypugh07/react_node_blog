@@ -2,7 +2,6 @@
     base = './client'
     publish = './build'
     command = 'npm run build'
-    command = 'yarn upgrade'
 
 [[redirects]]
     from = '/*'
