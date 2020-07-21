@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Context from '../utils/context';
 
-import { Link } from 'react-router-dom';
+import { Link,Router,Route} from 'react-router-dom';
 import history from '../utils/history';
 import axios from 'axios';
 import moment from 'moment'
@@ -29,11 +29,19 @@ const Profile = () => {
                                           })
 
   useEffect(() => {
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
     const user_id = context.dbProfileState[0].uid
-    axios.get('https://warm-island-33082.herokuapp.com/api/get/userposts', {params: { user_id: user_id}})
+    axios.get('https://warm-island-33082.herokuapp.com/api/get/userposts', {params: { user_id: user_id}}, { cancelToken: source.token })
       .then((res) => setState({...stateLocal, posts: [...res.data] }))
       .catch((err) => console.log(err))
-  })
+
+      return () => {
+        source.cancel();
+      };
+    }, []);
+  
 
   const handleClickOpen = (pid) => {
     setState({open: true, post_id: pid })
@@ -73,7 +81,8 @@ const Profile = () => {
    }
 
   const RenderPosts = post => (
-    <Card style={{width: '100%'/* , height: '200px' */, marginBottom: '10px', paddingBottom: '80px'}}>
+   
+   <Card style={{width: '100%'/* , height: '200px' */, marginBottom: '10px', paddingBottom: '80px'}}>
       <CardHeader 
         title={<Link to={{pathname:'/post/' + post.post.pid, state: {post}}} style={{color:'#5936AC'}}>
                   {post.post.title}
@@ -85,11 +94,11 @@ const Profile = () => {
               </div>
               <div className="FlexRow">
                 <Link to={{pathname:'/editpost/' + post.post.pid, state:{post} }}>
-                  <button>
+                  <button className='profilebutton'>
                    Edit
                   </button>
                 </Link>
-                <button onClick={() => handleClickOpen(post.post.pid) }>
+                <button className='profilebutton' onClick={() => handleClickOpen(post.post.pid) }>
                  Delete
                 </button>
               </div>
@@ -118,6 +127,7 @@ const Profile = () => {
             </div>
             <Dialog
               open={stateLocal.open}
+             // open={handleClickOpen}
               onClose={handleClickClose}
               aria-labelledby="alert-dialog-title"
               aria-describedby="alert-dialog-description"
@@ -127,8 +137,10 @@ const Profile = () => {
                   <DialogContentText
                     id="alert-dialog-description"
                     >
-                      Deleteing Post
+                      Deleting Post
                     </DialogContentText>
+                    </DialogContent>
+
                     <DialogActions>
                       <Button onClick={() => DeletePost() }>
                         Agree
@@ -137,7 +149,7 @@ const Profile = () => {
                         Cancel
                       </Button>
                   </DialogActions>
-                </DialogContent>
+
             </Dialog>
 
           </div>
